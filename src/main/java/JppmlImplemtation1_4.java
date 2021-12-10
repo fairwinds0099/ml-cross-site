@@ -1,3 +1,4 @@
+/*
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -88,4 +89,4 @@ public class Main {
     System.out.println(a + " " + b + " " + c + " " + d + ":" + primitiveValue);
     return primitiveValue;
   }
-}
+}*/
