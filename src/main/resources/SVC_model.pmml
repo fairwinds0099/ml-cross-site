@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.6.34"/>
+		<Timestamp>2021-12-08T13:22:59Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('classifier', SVC())])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="integer">
+			<Value value="0"/>
+			<Value value="1"/>
+			<Value value="2"/>
+		</DataField>
+		<DataField name="x1" optype="continuous" dataType="double"/>
+		<DataField name="x2" optype="continuous" dataType="double"/>
+		<DataField name="x3" optype="continuous" dataType="double"/>
+		<DataField name="x4" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<SupportVectorMachineModel functionName="classification" algorithmName="sklearn.svm._classes.SVC" classificationMethod="OneAgainstOne">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="x1"/>
+			<MiningField name="x2"/>
+			<MiningField name="x3"/>
+			<MiningField name="x4"/>
+		</MiningSchema>
+		<RadialBasisKernelType gamma="5.31730598054419E-6"/>
+		<VectorDictionary>
+			<VectorFields>
+				<FieldRef field="x1"/>
+				<FieldRef field="x2"/>
+				<FieldRef field="x3"/>
+				<FieldRef field="x4"/>
+			</VectorFields>
+			<VectorInstance id="0">
+				<Array type="real">1.0 2.0 3.0 1.0</Array>
+			</VectorInstance>
+			<VectorInstance id="2">
+				<Array type="real">7.0 8.0 3.0 6.0</Array>
+			</VectorInstance>
+			<VectorInstance id="1">
+				<Array type="real">2.0 4.0 1.0 5.0</Array>
+			</VectorInstance>
+			<VectorInstance id="4">
+				<Array type="real">2.0 5.0 6.0 999.0</Array>
+			</VectorInstance>
+			<VectorInstance id="3">
+				<Array type="real">4.0 8.0 4.0 7.0</Array>
+			</VectorInstance>
+		</VectorDictionary>
+		<SupportVectorMachine targetCategory="1" alternateTargetCategory="0">
+			<SupportVectors>
+				<SupportVector vectorId="0"/>
+				<SupportVector vectorId="2"/>
+				<SupportVector vectorId="1"/>
+				<SupportVector vectorId="4"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="1.6383780166506767E-4">
+				<Coefficient value="1.0"/>
+				<Coefficient value="1.0"/>
+				<Coefficient value="-1.0"/>
+				<Coefficient value="-1.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="2" alternateTargetCategory="0">
+			<SupportVectors>
+				<SupportVector vectorId="0"/>
+				<SupportVector vectorId="2"/>
+				<SupportVector vectorId="3"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="1.00001060962677">
+				<Coefficient value="0.0"/>
+				<Coefficient value="1.0"/>
+				<Coefficient value="-1.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="2" alternateTargetCategory="1">
+			<SupportVectors>
+				<SupportVector vectorId="1"/>
+				<SupportVector vectorId="4"/>
+				<SupportVector vectorId="3"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="0.9999681797344238">
+				<Coefficient value="0.9998555892887874"/>
+				<Coefficient value="1.4441071121262805E-4"/>
+				<Coefficient value="-1.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+	</SupportVectorMachineModel>
+</PMML>
